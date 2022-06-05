@@ -1,4 +1,4 @@
-# Example to read a File
+# Example to read/import a file in Python
 
 This is a simple example to read a file .txt in python
 ```python
@@ -17,4 +17,26 @@ file.close()
 # Check whether file is closed
 print(file.closed)
 ```
+Import flat files using Numpy
+
+```python
+import numpy as np
+filename = 'MNIST.txt'
+data = np.loadtxt(filename, delimiter=',')
+print(data)
+```
+```python
+# Import package
+import numpy as np
+
+# Assign filename to variable: file
+file = 'digits.csv'
+
+# Load file as array: digits
+digits = np.loadtxt(file, delimiter=',')
+
+# Print datatype of digits
+print(type(digits))
+```
+Import flat files using Pandas
 
