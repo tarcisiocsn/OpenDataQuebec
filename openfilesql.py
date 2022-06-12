@@ -23,7 +23,7 @@ import pandas as pd
 engine = create_engine('sqlite:///Chinook.sqlite')
 
 # Execute query and store records in DataFrame: df
-df = pd.read_sql_query('SELECT * FROM Album', engine)
+df = pd.read_sql_query('SELECT * FROM Album', engine) # we can write all the query in this line of code
 
 # Print head of DataFrame
 print(df.head())
