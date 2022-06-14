@@ -65,7 +65,7 @@ for k in json_data.keys():
     
 ```
 API requests
-```
+```python
 # Import requests package
 import requests
 
