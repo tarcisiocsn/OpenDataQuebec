@@ -52,4 +52,16 @@ df = pd.read_csv(file)
 # View the head of the DataFrame
 print(df.head())
 ```
+Open json files
+```python
+# Load JSON: json_data
+import json
+with open("a_movie.json") as json_file:
+    json_data = json.load(json_file) # type = dict
+
+# Print each key-value pair in json_data
+for k in json_data.keys():
+    print(k + ': ', json_data[k])
+    
+```
 
