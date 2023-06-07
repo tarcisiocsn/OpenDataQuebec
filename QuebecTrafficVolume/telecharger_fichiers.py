@@ -78,7 +78,7 @@ import requests
 import os
 
 # Create a folder for the downloaded files
-download_folder = '/Users/tarcisio/Documents/Polytechnique/Projet Final/Codes/debit_circulation_quebec/'
+download_folder = '/path/debit_circulation_quebec/'
 if not os.path.exists(download_folder):
     os.makedirs(download_folder)
 
@@ -150,7 +150,7 @@ print("File download complete.")
 #%% confirme if downloaded all files
 import os
 
-directory = '/Users/tarcisio/Documents/Polytechnique/Projet Final/Codes/debit_circulation_quebec/'
+directory = '/path/debit_circulation_quebec/'
 # Get a list of all items in the directory
 items = os.listdir(directory)
 
