@@ -147,7 +147,7 @@ print(f"Total number of new folders created: {total_folders_created}")
 # Print a message after the download is complete
 print("File download complete.")
 
-#%% confirme if downloaded all files
+#%% CONFIRME IF IT DOWNLOADED ALL FILES
 directory = 'debit_circulation_quebec'
 # Get the current working directory
 current_dir = os.getcwd()
