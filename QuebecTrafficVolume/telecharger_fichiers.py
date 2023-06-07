@@ -78,22 +78,13 @@ import requests
 import os
 
 # Create a folder for the downloaded files
-# Specify the relative path to the folder
-relative_folder_path = 'debit_circulation_quebec'
-
-# Get the current working directory
-current_dir = os.getcwd()
-
-# Create the full path for the new folder
-new_folder_path = os.path.join(current_dir, relative_folder_path)
-
-# Create the new folder
-if not os.path.exists(new_folder_path):
-    os.makedirs(new_folder_path)
+download_folder = 'debit_circulation_quebec'
+if not os.path.exists(download_folder):
+    os.makedirs(download_folder)
 
 # Function to download a file from a URL
 def download_file(url, folder):
-  pathts.get(url)
+    response = requests.get(url)
     filename = url.split('/')[-1]
     file_path = os.path.join(download_folder, folder, filename)
     with open(file_path, 'wb') as file:
