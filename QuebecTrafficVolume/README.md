@@ -2,7 +2,8 @@
 
 * [folders_data_quebec](https://polymtlca0-my.sharepoint.com/:f:/g/personal/tarcisio_costa-de-souza-neto_polymtl_ca/Es42_1xrGx1EuIE6FHHBSBMBB05q0hX9axpftgjZcqmMaQ?e=L6TdUc) extracted by the python code. 
 
-## Python code for automatic download: file [telecharger_fichiers.py]. This code is used to download files from specific URLs and store them locally in corresponding folders. Here is a summary of the main steps:
+#### Python code for automatic download: 
+file [telecharger_fichiers.py]. This code is used to download files from specific URLs and store them locally in corresponding folders. Here is a summary of the main steps:
 
 1. Creating a download folder.
 2. Define a function to download a file from a given URL.
