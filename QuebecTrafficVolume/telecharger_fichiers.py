@@ -160,7 +160,7 @@ num_folders = sum(os.path.isdir(os.path.join(directory, item)) for item in items
 # Print the number of folders
 print(f"The '{directory}' directory has {num_folders} folders.")
 
-#%% I have these code here and I want to implement the o
+
 
         
         
