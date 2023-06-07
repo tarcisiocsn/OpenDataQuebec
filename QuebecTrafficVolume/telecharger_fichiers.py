@@ -84,7 +84,7 @@ if not os.path.exists(download_folder):
 
 # Function to download a file from a URL
 def download_file(url, folder):
-    response = requests.get(url)
+  pathts.get(url)
     filename = url.split('/')[-1]
     file_path = os.path.join(download_folder, folder, filename)
     with open(file_path, 'wb') as file:
