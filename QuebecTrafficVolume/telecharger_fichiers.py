@@ -148,14 +148,18 @@ print(f"Total number of new folders created: {total_folders_created}")
 print("File download complete.")
 
 #%% confirme if downloaded all files
-import os
+directory = 'debit_circulation_quebec'
+# Get the current working directory
+current_dir = os.getcwd()
 
-directory = '/path/debit_circulation_quebec/'
+# Create the full path for the directory
+directory_path = os.path.join(current_dir, directory)
+
 # Get a list of all items in the directory
-items = os.listdir(directory)
+items = os.listdir(directory_path)
 
 # Count the number of directories
-num_folders = sum(os.path.isdir(os.path.join(directory, item)) for item in items)
+num_folders = sum(os.path.isdir(os.path.join(directory_path, item)) for item in items)
 
 # Print the number of folders
 print(f"The '{directory}' directory has {num_folders} folders.")
