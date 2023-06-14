@@ -74,6 +74,7 @@ print("Number of duplicates in 'num_sectn_trafc' column:", num_duplicates)
 
 #%% DOWNLOAD THE FILES
 
+#%% relative path
 import requests
 import os
 
@@ -111,35 +112,29 @@ for index, row in df.iterrows():
     num_sectn_trafc = str(row['num_sectn_trafc'])
     section_urls = extract_urls(row['url_index_section'])
     donnees_urls = extract_urls(row['url_index_donnees'])
-    
-    # Create a folder for the current 'num_sectn_trafc' if it doesn't already exist
-    folder_path = os.path.join(download_folder, num_sectn_trafc)
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-        total_folders_created += 1
-        current_folders_created += 1
-    
-    # Download files from 'extracted_url_section' URLs
-    section_folder_path = os.path.join(folder_path, 'extracted_url_section')
-    if section_urls:
-        if not os.path.exists(section_folder_path):
-            os.makedirs(section_folder_path)
-            current_folders_created += 1
-        for url in section_urls:
-            download_file(url, os.path.join(num_sectn_trafc, 'extracted_url_section'))
-    
-    # Download files from 'extracted_url_donnees' URLs
-    donnees_folder_path = os.path.join(folder_path, 'extracted_url_donnees')
-    if donnees_urls:
-        if not os.path.exists(donnees_folder_path):
-            os.makedirs(donnees_folder_path)
-            current_folders_created += 1
-        for url in donnees_urls:
-            download_file(url, os.path.join(num_sectn_trafc, 'extracted_url_donnees'))
 
-    # Print the number of new folders created for the current 'num_sectn_trafc'
-    print(f"For num_sectn_trafc '{num_sectn_trafc}', {current_folders_created} new folders were created.")
-    current_folders_created = 0
+    # Check if there are any URLs in either section_urls or donnees_urls
+    if section_urls or donnees_urls:
+        # Create a folder for the current 'num_sectn_trafc' if it doesn't already exist
+        folder_path = os.path.join(download_folder, num_sectn_trafc)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+            total_folders_created += 1
+            current_folders_created += 1
+
+        # Download files from 'section_urls' URLs
+        if section_urls:
+            for url in section_urls:
+                download_file(url, num_sectn_trafc)
+
+        # Download files from 'donnees_urls' URLs
+        if donnees_urls:
+            for url in donnees_urls:
+                download_file(url, num_sectn_trafc)
+
+        # Print the number of new folders created for the current 'num_sectn_trafc'
+        print(f"For num_sectn_trafc '{num_sectn_trafc}', {current_folders_created} new folders were created.")
+        current_folders_created = 0
 
 # Print the total number of new folders created
 print(f"Total number of new folders created: {total_folders_created}")
