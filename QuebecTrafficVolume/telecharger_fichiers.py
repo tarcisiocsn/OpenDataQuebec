@@ -23,8 +23,8 @@ print(df.head())  # Print the first few rows of the DataFrame
 #%% download only the files xls in the section and donnees columns 
 
 # Create new columns for extracted URLs
-df['extracted_url_section'] = np.nan
-df['extracted_url_donnees'] = np.nan
+df['extracted_url_agregated'] = np.nan
+df['extracted_url_count'] = np.nan
 
 # Function to extract URLs from HTML using BeautifulSoup
 def extract_urls(html):
@@ -43,9 +43,9 @@ for index, row in df.iterrows():
     section_urls = extract_urls(row['url_index_section'])
     donnees_urls = extract_urls(row['url_index_donnees'])
     if section_urls:
-        df.at[index, 'extracted_url_section'] = ', '.join(section_urls)
+        df.at[index, 'extracted_url_agregated'] = ', '.join(section_urls)
     if donnees_urls:
-        df.at[index, 'extracted_url_donnees'] = ', '.join(donnees_urls)
+        df.at[index, 'extracted_url_count'] = ', '.join(donnees_urls)
 
 # Print the updated DataFrame
 print(df)
@@ -54,7 +54,7 @@ print(df)
 
 
 # Create a filter based on non-empty values in the specified columns
-filter = df['extracted_url_section'].notna() | df['extracted_url_donnees'].notna()
+filter = df['extracted_url_agregated'].notna() | df['extracted_url_count'].notna()
 
 # Apply the filter to select the rows with non-empty values
 filtered_df = df[filter]
