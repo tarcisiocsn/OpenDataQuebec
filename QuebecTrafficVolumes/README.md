@@ -18,3 +18,5 @@ File [telecharger_fichiers.py]. This code is used to download files from specifi
 11. Display of a message indicating that the download of files is complete.
 
 This summarizes the main steps of this code.
+
+### Access the notebook file to get automatic analysis
