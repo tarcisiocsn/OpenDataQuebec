@@ -230,3 +230,19 @@ def plot_averages_by_month(dataframe_name):
 
     # Display the plots
     plt.show()
+
+    #%% other functions
+def map_and_add_res_nm_reg(df, result_df):
+    # Check if the DataFrame contains the 'SECTN' column
+    if 'SECTN' in df.columns:
+        # Create a dictionary to map 'num_sectn_' to 'RES_NM_REG'
+        sectn_to_res_nm_reg = result_df.set_index('num_sectn_')['RES_NM_REG'].to_dict()
+
+        # Add a new column 'RES_NM_REG' to the DataFrame based on the mapping
+        df['RES_NM_REG'] = df['SECTN'].map(sectn_to_res_nm_reg)
+        return df
+    else:
+        print("DataFrame does not contain the 'SECTN' column.")
+        return df
+
+# %%
